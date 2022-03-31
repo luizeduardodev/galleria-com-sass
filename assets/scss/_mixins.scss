@@ -1,9 +1,8 @@
 @use "variables";
 
-@mixin container {
+@mixin width-container {
     width: 100%;
     max-width: variables.$container-width;
-    padding: 1.5rem 0;
     margin: 0 auto;
 }
 
@@ -29,8 +28,26 @@
     }
 }
 
-@mixin mobile {
+@mixin responsive-768px {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin responsive-425px {
     @media screen and(max-width: 425px) {
+        @content;
+    }
+}
+
+@mixin responsive-375px {
+    @media screen and(max-width: 375px) {
+        @content;
+    }
+}
+
+@mixin responsive-320px {
+    @media screen and(max-width: 320px) {
         @content;
     }
 }

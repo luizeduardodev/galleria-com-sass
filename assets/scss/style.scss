@@ -6,7 +6,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 100%;
     font-family: "Josefin Sans";
+}
+
+img {
+    max-width: 100%;
+}
+
+html {
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -25,17 +34,51 @@ body {
 }
 
 .header {
+    padding: 1.5rem 0;
     display: flex;
     justify-content: space-between;
-    @include mixins.container;
+    @include mixins.width-container;
 
-    // @include mixins.mobile {
-    //     padding: 1.1rem;
-    // }
+    @include mixins.responsive-768px {
+        justify-content: space-around;
+        padding: 1.3rem 0;
+    }
+
+    @include mixins.responsive-425px {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.9rem;
+        padding: 1.1rem 0;
+    }
+
+    @include mixins.responsive-375px {
+        gap: 0.8rem;
+        padding: 1rem 0;
+    }
+
+    @include mixins.responsive-320px {
+        gap: 0.7rem;
+    }
 
     &-brand {
         color: variables.$primary-color;
         font-size: 2.5rem;
+
+        @include mixins.responsive-768px {
+            font-size: 2.3rem;
+        }
+
+        @include mixins.responsive-425px {
+            font-size: 2.2rem;
+        }
+
+        @include mixins.responsive-375px {
+            font-size: 2rem;
+        }
+
+        @include mixins.responsive-320px {
+            font-size: 1.8rem;
+        }
 
         &:hover {
             color: variables.$secundary-color;
@@ -48,13 +91,31 @@ body {
             @include mixins.flex-center;
             gap: 1rem;
 
-            // @include mixins.mobile {
-            //     display: none;
-            // }
+            @include mixins.responsive-375px {
+                gap: 0.4rem;
+            }
+
+            @include mixins.responsive-320px {
+                gap: 0.3rem;
+            }
 
             li {
                 text-transform: uppercase;
                 font-size: 0.9rem;
+                padding: 5px;
+
+                @include mixins.responsive-768px {
+                    font-size: 0.8rem;
+                }
+
+                @include mixins.responsive-375px {
+                    padding: 4px;
+                }
+
+                @include mixins.responsive-320px {
+                    font-size: 0.7rem;
+                    padding: 3px;
+                }
 
                 .active {
                     color: variables.$secundary-color;
@@ -75,13 +136,19 @@ body {
             height: 100%;
             gap: 1rem;
 
-            // @include mixins.mobile {
-            //     display: none;
-            // }
-
             li {
+                padding: 2px;
+
                 i {
                     font-size: 1.1rem;
+
+                    @include mixins.responsive-768px {
+                        font-size: 1rem;
+                    }
+
+                    @include mixins.responsive-320px {
+                        font-size: 0.9rem;
+                    }
 
                     &:hover {
                         transition: all 0.15s ease;
@@ -95,33 +162,70 @@ body {
 }
 
 .gallery {
-    @include mixins.container;
+    @include mixins.width-container;
     @include mixins.flex-center;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 0;
 
-    // @include mixins.mobile {
-    //     flex-direction: column;
-    // }
+    @include mixins.responsive-768px {
+        width: 95%;
+    }
+
+    @include mixins.responsive-425px {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
     &-card {
         @include mixins.flex-center;
-        width: 32%;
+        width: 31%;
         height: 350px;
         margin-bottom: 2%;
         flex-direction: column;
         color: variables.$primary-color;
 
-        // @include mixins.mobile {
-        //     width: 90%;
-        //     margin-bottom: 6%;
-        // }
+        @include mixins.responsive-768px {
+            width: 49%;
+            height: 330px;
+        }
+
+        @include mixins.responsive-425px {
+            width: 95%;
+            margin-bottom: 30px;
+        }
+
+        @include mixins.responsive-375px {
+            height: 300px;
+            margin-bottom: 20px;
+        }
+
+        @include mixins.responsive-320px {
+            height: 280px;
+            margin-bottom: 15px;
+        }
 
         &-title {
             font-size: 2rem;
             font-weight: bold;
             margin-bottom: 1rem;
+
+            @include mixins.responsive-768px {
+                font-size: 1.7rem;
+            }
+
+            @include mixins.responsive-425px {
+                font-size: 1.6rem;
+            }
+
+            @include mixins.responsive-375px {
+                font-size: 1.5rem;
+            }
+
+            @include mixins.responsive-320px {
+                font-size: 1.4rem;
+            }
         }
 
         &-btn {
@@ -130,6 +234,25 @@ body {
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 1px;
+
+            @include mixins.responsive-768px {
+                padding: .6rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            @include mixins.responsive-425px {
+                padding: .5rem 1.1rem;
+                font-size: 0.8rem;
+            }
+
+            @include mixins.responsive-375px {
+                padding: .5rem 1rem;
+            }
+
+            @include mixins.responsive-320px {
+                padding: .5rem 0.9rem;
+                font-size: 0.7rem;
+            }
 
             &:hover {
                 background-color: variables.$primary-color;
@@ -182,5 +305,9 @@ footer {
     span {
         font-weight: bold;
         color: variables.$secundary-color;
+
+        @include mixins.responsive-320px {
+            font-size: 0.9rem;
+        }
     }
 }

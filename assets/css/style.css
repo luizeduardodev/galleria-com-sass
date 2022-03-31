@@ -3,7 +3,16 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-size: 100%;
   font-family: "Josefin Sans";
+}
+
+img {
+  max-width: 100%;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -21,6 +30,7 @@ body ul {
 }
 
 .header {
+  padding: 1.5rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -29,12 +39,62 @@ body ul {
           justify-content: space-between;
   width: 100%;
   max-width: 980px;
-  padding: 1.5rem 0;
   margin: 0 auto;
+}
+@media screen and (max-width: 768px) {
+  .header {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    padding: 1.3rem 0;
+  }
+}
+@media screen and (max-width: 425px) {
+  .header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 0.9rem;
+    padding: 1.1rem 0;
+  }
+}
+@media screen and (max-width: 375px) {
+  .header {
+    gap: 0.8rem;
+    padding: 1rem 0;
+  }
+}
+@media screen and (max-width: 320px) {
+  .header {
+    gap: 0.7rem;
+  }
 }
 .header-brand {
   color: #fff;
   font-size: 2.5rem;
+}
+@media screen and (max-width: 768px) {
+  .header-brand {
+    font-size: 2.3rem;
+  }
+}
+@media screen and (max-width: 425px) {
+  .header-brand {
+    font-size: 2.2rem;
+  }
+}
+@media screen and (max-width: 375px) {
+  .header-brand {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  .header-brand {
+    font-size: 1.8rem;
+  }
 }
 .header-brand:hover {
   color: #20c997;
@@ -52,9 +112,36 @@ body ul {
           justify-content: center;
   gap: 1rem;
 }
+@media screen and (max-width: 375px) {
+  .header-navbar ul {
+    gap: 0.4rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  .header-navbar ul {
+    gap: 0.3rem;
+  }
+}
 .header-navbar ul li {
   text-transform: uppercase;
   font-size: 0.9rem;
+  padding: 5px;
+}
+@media screen and (max-width: 768px) {
+  .header-navbar ul li {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 375px) {
+  .header-navbar ul li {
+    padding: 4px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .header-navbar ul li {
+    font-size: 0.7rem;
+    padding: 3px;
+  }
 }
 .header-navbar ul li .active {
   color: #20c997;
@@ -75,8 +162,21 @@ body ul {
   height: 100%;
   gap: 1rem;
 }
+.header-social-media ul li {
+  padding: 2px;
+}
 .header-social-media ul li i {
   font-size: 1.1rem;
+}
+@media screen and (max-width: 768px) {
+  .header-social-media ul li i {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  .header-social-media ul li i {
+    font-size: 0.9rem;
+  }
 }
 .header-social-media ul li i:hover {
   -webkit-transition: all 0.15s ease;
@@ -88,7 +188,6 @@ body ul {
 .gallery {
   width: 100%;
   max-width: 980px;
-  padding: 1.5rem 0;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -106,6 +205,25 @@ body ul {
           justify-content: space-between;
   padding: 0;
 }
+@media screen and (max-width: 768px) {
+  .gallery {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .gallery {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
 .gallery-card {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -116,7 +234,7 @@ body ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 32%;
+  width: 31%;
   height: 350px;
   margin-bottom: 2%;
   -webkit-box-orient: vertical;
@@ -125,10 +243,54 @@ body ul {
           flex-direction: column;
   color: #fff;
 }
+@media screen and (max-width: 768px) {
+  .gallery-card {
+    width: 49%;
+    height: 330px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .gallery-card {
+    width: 95%;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .gallery-card {
+    height: 300px;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .gallery-card {
+    height: 280px;
+    margin-bottom: 15px;
+  }
+}
 .gallery-card-title {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1rem;
+}
+@media screen and (max-width: 768px) {
+  .gallery-card-title {
+    font-size: 1.7rem;
+  }
+}
+@media screen and (max-width: 425px) {
+  .gallery-card-title {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (max-width: 375px) {
+  .gallery-card-title {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  .gallery-card-title {
+    font-size: 1.4rem;
+  }
 }
 .gallery-card-btn {
   padding: 0.6rem 2rem;
@@ -136,6 +298,29 @@ body ul {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+@media screen and (max-width: 768px) {
+  .gallery-card-btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 425px) {
+  .gallery-card-btn {
+    padding: 0.5rem 1.1rem;
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 375px) {
+  .gallery-card-btn {
+    padding: 0.5rem 1rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  .gallery-card-btn {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.7rem;
+  }
 }
 .gallery-card-btn:hover {
   background-color: #fff;
@@ -302,4 +487,9 @@ footer {
 footer span {
   font-weight: bold;
   color: #20c997;
+}
+@media screen and (max-width: 320px) {
+  footer span {
+    font-size: 0.9rem;
+  }
 }/*# sourceMappingURL=style.css.map */
