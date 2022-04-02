@@ -39,24 +39,24 @@ body {
     justify-content: space-between;
     @include mixins.width-container;
 
-    @include mixins.responsive-768px {
+    @include mixins.mediaQuerry(768px) {
         justify-content: space-around;
         padding: 1.3rem 0;
     }
 
-    @include mixins.responsive-425px {
+    @include mixins.mediaQuerry(425px) {
         flex-direction: column;
         align-items: center;
         gap: 0.9rem;
         padding: 1.1rem 0;
     }
 
-    @include mixins.responsive-375px {
+    @include mixins.mediaQuerry(375px) {
         gap: 0.8rem;
         padding: 1rem 0;
     }
 
-    @include mixins.responsive-320px {
+    @include mixins.mediaQuerry(320px) {
         gap: 0.7rem;
     }
 
@@ -64,19 +64,19 @@ body {
         color: variables.$primary-color;
         font-size: 2.5rem;
 
-        @include mixins.responsive-768px {
+        @include mixins.mediaQuerry(768px) {
             font-size: 2.3rem;
         }
 
-        @include mixins.responsive-425px {
+        @include mixins.mediaQuerry(425px) {
             font-size: 2.2rem;
         }
 
-        @include mixins.responsive-375px {
+        @include mixins.mediaQuerry(375px) {
             font-size: 2rem;
         }
 
-        @include mixins.responsive-320px {
+        @include mixins.mediaQuerry(320px) {
             font-size: 1.8rem;
         }
 
@@ -91,11 +91,15 @@ body {
             @include mixins.flex-center;
             gap: 1rem;
 
-            @include mixins.responsive-375px {
+            @include mixins.mediaQuerry(375px) {
+                // flex-direction: column;
+            }
+
+            @include mixins.mediaQuerry(375px) {
                 gap: 0.4rem;
             }
 
-            @include mixins.responsive-320px {
+            @include mixins.mediaQuerry(320px) {
                 gap: 0.3rem;
             }
 
@@ -104,15 +108,15 @@ body {
                 font-size: 0.9rem;
                 padding: 5px;
 
-                @include mixins.responsive-768px {
+                @include mixins.mediaQuerry(768px) {
                     font-size: 0.8rem;
                 }
 
-                @include mixins.responsive-375px {
+                @include mixins.mediaQuerry(375px) {
                     padding: 4px;
                 }
 
-                @include mixins.responsive-320px {
+                @include mixins.mediaQuerry(320px) {
                     font-size: 0.7rem;
                     padding: 3px;
                 }
@@ -142,11 +146,11 @@ body {
                 i {
                     font-size: 1.1rem;
 
-                    @include mixins.responsive-768px {
+                    @include mixins.mediaQuerry(768px) {
                         font-size: 1rem;
                     }
 
-                    @include mixins.responsive-320px {
+                    @include mixins.mediaQuerry(320px) {
                         font-size: 0.9rem;
                     }
 
@@ -168,11 +172,11 @@ body {
     justify-content: space-between;
     padding: 0;
 
-    @include mixins.responsive-768px {
+    @include mixins.mediaQuerry(768px) {
         width: 95%;
     }
 
-    @include mixins.responsive-425px {
+    @include mixins.mediaQuerry(425px) {
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -186,22 +190,22 @@ body {
         flex-direction: column;
         color: variables.$primary-color;
 
-        @include mixins.responsive-768px {
+        @include mixins.mediaQuerry(768px) {
             width: 49%;
             height: 330px;
         }
 
-        @include mixins.responsive-425px {
+        @include mixins.mediaQuerry(425px) {
             width: 95%;
             margin-bottom: 30px;
         }
 
-        @include mixins.responsive-375px {
+        @include mixins.mediaQuerry(375px) {
             height: 300px;
             margin-bottom: 20px;
         }
 
-        @include mixins.responsive-320px {
+        @include mixins.mediaQuerry(320px) {
             height: 280px;
             margin-bottom: 15px;
         }
@@ -211,19 +215,19 @@ body {
             font-weight: bold;
             margin-bottom: 1rem;
 
-            @include mixins.responsive-768px {
+            @include mixins.mediaQuerry(768px) {
                 font-size: 1.7rem;
             }
 
-            @include mixins.responsive-425px {
+            @include mixins.mediaQuerry(425px) {
                 font-size: 1.6rem;
             }
 
-            @include mixins.responsive-375px {
+            @include mixins.mediaQuerry(375px) {
                 font-size: 1.5rem;
             }
 
-            @include mixins.responsive-320px {
+            @include mixins.mediaQuerry(320px) {
                 font-size: 1.4rem;
             }
         }
@@ -235,21 +239,21 @@ body {
             text-transform: uppercase;
             letter-spacing: 1px;
 
-            @include mixins.responsive-768px {
+            @include mixins.mediaQuerry(768px) {
                 padding: .6rem 1.5rem;
                 font-size: 0.9rem;
             }
 
-            @include mixins.responsive-425px {
+            @include mixins.mediaQuerry(425px) {
                 padding: .5rem 1.1rem;
                 font-size: 0.8rem;
             }
 
-            @include mixins.responsive-375px {
+            @include mixins.mediaQuerry(375px) {
                 padding: .5rem 1rem;
             }
 
-            @include mixins.responsive-320px {
+            @include mixins.mediaQuerry(320px) {
                 padding: .5rem 0.9rem;
                 font-size: 0.7rem;
             }
@@ -269,10 +273,8 @@ body {
             background-size: 110%;
             filter: grayscale(0%);
             background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-                url(/assets/img/animais.jpg);
+            url(/assets/img/animais.jpg);
         }
-
-        // @include mixins.bg-image("animais.jpg");
     }
 
     #card-2 {
@@ -283,10 +285,8 @@ body {
             background-size: 110%;
             filter: grayscale(0%);
             background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-                url(/assets/img/arquitetura.jpg);
+            url(/assets/img/arquitetura.jpg);
         }
-
-        // @include mixins.bg-image("arquitetura.jpg");
     }
 
     #card-3 {
@@ -297,10 +297,8 @@ body {
             background-size: 110%;
             filter: grayscale(0%);
             background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-                url(/assets/img/cidade.jpg);
+            url(/assets/img/cidade.jpg);
         }
-
-        // @include mixins.bg-image("cidade.jpg");
     }
 
     #card-4 {
@@ -311,10 +309,8 @@ body {
             background-size: 110%;
             filter: grayscale(0%);
             background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-                url(/assets/img/decoracao.jpg);
+            url(/assets/img/decoracao.jpg);
         }
-
-        // @include mixins.bg-image("decoracao.jpg");
     }
 
     #card-5 {
@@ -325,10 +321,8 @@ body {
             background-size: 110%;
             filter: grayscale(0%);
             background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-                url(/assets/img/esportes.jpg);
+            url(/assets/img/esportes.jpg);
         }
-
-        // @include mixins.bg-image("esportes.jpg");
     }
 
     #card-6 {
@@ -339,10 +333,8 @@ body {
             background-size: 110%;
             filter: grayscale(0%);
             background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-                url(/assets/img/natureza.jpg);
+            url(/assets/img/natureza.jpg);
         }
-
-        // @include mixins.bg-image("natureza.jpg");
     }
 
     #card-7 {
@@ -353,9 +345,8 @@ body {
             background-size: 110%;
             filter: grayscale(0%);
             background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-                url(/assets/img/paisagem.jpg);
+            url(/assets/img/paisagem.jpg);
         }
-        // @include mixins.bg-image("paisagem.jpg");
     }
 
     #card-8 {
@@ -366,9 +357,8 @@ body {
             background-size: 110%;
             filter: grayscale(0%);
             background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-                url(/assets/img/pessoas.jpg);
+            url(/assets/img/pessoas.jpg);
         }
-        // @include mixins.bg-image("pessoas.jpg");
     }
 
     #card-9 {
@@ -379,9 +369,8 @@ body {
             background-size: 110%;
             filter: grayscale(0%);
             background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-                url(/assets/img/refeicoes.jpg);
+            url(/assets/img/refeicoes.jpg);
         }
-        // @include mixins.bg-image("refeicoes.jpg");
     }
 }
 
@@ -393,7 +382,7 @@ footer {
         font-weight: bold;
         color: variables.$secundary-color;
 
-        @include mixins.responsive-320px {
+        @include mixins.mediaQuerry(320px) {
             font-size: 0.9rem;
         }
     }
